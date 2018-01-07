@@ -159,6 +159,7 @@ def generate_toc(content):
         tree_string = '{}'.format(tree)
         tree_soup = BeautifulSoup(tree_string, 'html.parser')
         content.toc = tree_soup.decode(formatter='html')
+        content.toc = content.toc.replace('&para;', '')
     content._content = soup.decode(formatter='html')
 
 
